@@ -1,4 +1,4 @@
-<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="500" src="../images/pofid-icon.png"></a></p>
+<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="500" src="./images/pofid-icon.png"></a></p>
 
 # PofidStaking Smart Contracts
 
@@ -9,7 +9,7 @@ PFID issued a total of 10 million, of which 5.1 million will have PofidStaking o
 
 # PofidStaking Interest
 ### Interest rate change table
-<img width="500" src="../images/staking-interest.png">
+<img width="500" src="./images/staking-interest.png">
 
 1) The interest for every 30 days in the first year is 4 ‰, which will decrease by 10% each year thereafter
 
@@ -18,7 +18,7 @@ PFID issued a total of 10 million, of which 5.1 million will have PofidStaking o
 3) The interest for every 90 days in the first year is 2.4 ‰, which will decrease by 10% each year thereafter
 
 ## Example
-<img width="500" src="../images/staking-1.png">
+<img width="500" src="./images/staking-1.png">
 
 1) Bob pledge a part of the tokens into the pos smart contract
 
