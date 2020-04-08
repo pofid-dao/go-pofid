@@ -1,4 +1,4 @@
-<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="500" src="../images/pofid-icon.png"></a></p>
+<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="500" src="./images/pofid-icon.png"></a></p>
 
 
 ## Introduction
@@ -25,7 +25,7 @@ The contract will be publicly auctioned，the start price is targetContract.back
 ## Example scenarios of SUSTD Bcked by SERO
 ### Scenario 1 - SERO price is stable
 
-<img width="500" src="../images/price-stable.png">
+<img width="500" src="./images/price-stable.png">
 
  1) Alice sends 3000 SERO at a current Rate 20 SERO/SUSTD to DMW Smart Contract (calling issue());
  2) Alice receives 98 SUSTD back(at 1.5 SERO: 1 SUSDT ratio,and 2% fee rate);
@@ -34,15 +34,15 @@ The contract will be publicly auctioned，the start price is targetContract.back
 
 ### Scenario 2 - SERO price is increasing
 
-<img width="500" src="../images/price-incr.png">
+<img width="500" src="./images/price-incr.png">
 
 - This scenario is similar to the first scenario. Since RBTC price is increasing, Alice is able to return 1,000 RTHB to get her own RBTC back at the rate 2,500 THB/BTC.
 
 ### Scenario 3 - sero price is decreasing
 
-<img width="500" src="../images/price-decr-1.png">
+<img width="500" src="./images/price-decr-1.png">
 
-<img width="500" src="../images/price-decr-2.png">
+<img width="500" src="./images/price-decr-2.png">
 
 1) Alice sends 3000 SERO at a current Rate 20 SERO/UST to DMW Smart COntract (calling issue());
 
