@@ -221,9 +221,7 @@ contract DMWAuctionBase is Ownable,SeroInterface {
         auction.seller= _claimant;
         
         auction.currentPrice = _bidAmount;
-        
-        updateActiveRequests();
-        
+
         if (_prevSeller !=address(0)){
             
             require(sero_send_token(_prevSeller,auction.mintCoin,_currentBidPrice),"send to seller failed");
