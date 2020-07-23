@@ -5,7 +5,6 @@ import "./Address.sol";
 contract StakingControl {
     
     address public owner;
-    address public proxy;
     
     
     /**
@@ -22,11 +21,6 @@ contract StakingControl {
 	 */
     modifier onlyOwner() {
         require(msg.sender == owner);
-        _;
-    }
-    
-    modifier onlyProxy() {
-        require(msg.sender == proxy);
         _;
     }
     
@@ -54,10 +48,7 @@ contract StakingControl {
     }
     
     
-    function setProxyAddress(address _proxy) external onlyOwner {
-        require(OpenZeppelinUpgradesAddress.isContract(_proxy),"not contract address");
-        proxy = _proxy;
-    }
+    
     
     function setDmwAddress(address _dwmAddress) external onlyOwner {
         require(OpenZeppelinUpgradesAddress.isContract(_dwmAddress),"not contract address");

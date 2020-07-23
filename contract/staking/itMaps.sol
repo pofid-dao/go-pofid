@@ -70,7 +70,7 @@ library itMaps {
             e.value = e.value.add(value);
         } else {
             e.value = value;
-            e.keyIndex = ++e.keyIndex;
+            e.keyIndex++;
             self.keys.insert(key);
         }
         return true;

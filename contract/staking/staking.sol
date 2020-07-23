@@ -1,7 +1,7 @@
 pragma solidity ^0.4.17;
 import "./SafeMath.sol";
 import "./seroInterface.sol";
-import "./utils.sol";
+import "./Utils.sol";
 import "./stakingBase.sol";
 
 
@@ -409,8 +409,10 @@ contract POFIDStaking is StakingBase,SeroInterface {
     function getShareInfo(uint256 shareIndex) external view returns(uint256 principal, uint256 income,uint64 endTime){
         
         Share memory share= shares[shareIndex];
-   
-        uint256 _interest = getInterstAmount(share.value,share.interest);
+        
+        uint256 dec = 10**uint256(interestDecimals());
+        
+        uint256 _interest = share.value.mul(share.interest).div(dec);
         
         uint256 _fee = _interest.mul(share.fee).div(100);
         

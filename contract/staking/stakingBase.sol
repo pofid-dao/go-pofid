@@ -1,5 +1,5 @@
 pragma solidity ^0.4.25;
-import "./utils.sol";
+import "./Utils.sol";
 import "./SafeMath.sol";
 import "./stakingControl.sol";
 import "./itMaps.sol";

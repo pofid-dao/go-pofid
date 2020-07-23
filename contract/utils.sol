@@ -3,10 +3,10 @@ pragma solidity ^0.4.25;
 import "github.com/Arachnid/solidity-stringutils/strings.sol";
 
 library  utils{
-    
+
     using strings for *;
-    
-    
+
+
     function equals(string a, string b) internal pure returns (bool) {
         if (bytes(a).length != bytes(b).length) {
             return false;
@@ -18,7 +18,7 @@ library  utils{
         }
         return true;
     }
-    
+
     function uint2str(uint256 i) internal pure returns (string memory){
         if (i == 0) return "0";
         uint j = i;
@@ -35,15 +35,15 @@ library  utils{
         }
         return string(bstr);
     }
-    
+
     function genBytes32(string key) internal pure returns(bytes32){
         return  keccak256(bytes(key));
     }
-    
+
     function genStableCoinKey(string memory backedCoin,string memory mintCoin) internal pure returns(bytes32){
         return keccak256(bytes(backedCoin.toSlice().concat(mintCoin.toSlice())));
     }
-    
+
     function _genKey(string key) internal pure returns (strings.slice){
         string memory result = "\"".toSlice().concat(key.toSlice());
         result = result.toSlice().concat("\":".toSlice());
@@ -54,17 +54,17 @@ library  utils{
         result = result.toSlice().concat("\"".toSlice());
         return result.toSlice();
     }
-    
+
     function _genUintValue(uint256 _value) internal pure returns(strings.slice){
         return uint2str(_value).toSlice();
     }
-    
+
     function _genStringValue(string _value) internal pure returns(strings.slice){
         string memory result = "\"".toSlice().concat(_value.toSlice());
         result = result.toSlice().concat("\"".toSlice());
         return result.toSlice();
     }
-    
+
     function _genBoolValue(bool _value)  internal pure returns(strings.slice result){
         if (_value){
             return "true".toSlice();
@@ -72,7 +72,7 @@ library  utils{
             return "false".toSlice();
         }
     }
-    
+
     function _actualLength(string[] datas) internal pure returns(uint256){
         uint256 size = 0;
         for(uint256 i=0;i<datas.length;i++){
@@ -82,8 +82,8 @@ library  utils{
         }
         return size;
     }
-    
-    
+
+
     function joinArrayString(string[] datas) internal pure returns(string result ){
         strings.slice[] memory slices = new strings.slice[](_actualLength(datas));
         uint256 start = 0;
@@ -98,19 +98,19 @@ library  utils{
         result = result.toSlice().concat("]".toSlice());
         return;
     }
-    
+
     function toSlice(string data) internal pure returns (strings.slice){
         return data.toSlice();
     }
-    
+
     function concat(strings.slice a, strings.slice b) internal pure returns(string memory){
         return a.concat(b);
     }
-    
+
     function join(strings.slice a, strings.slice[] b) internal pure returns(string memory){
         return a.join(b);
     }
-    
+
     function until(strings.slice self, strings.slice needle )internal pure returns (strings.slice memory){
         return self.until(needle);
     }

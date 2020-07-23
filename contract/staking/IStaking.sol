@@ -16,7 +16,7 @@ interface IStaking {
     
     function myPageShare(uint256 offset,uint256 pageSize) external view returns(string result);
     
-    function stakingBalance() external view returns(uint256);
+    function stakingPoolBalance() external view returns(uint256);
     
     function getPhaseBalance(uint8 seq) external view returns(uint256);
     

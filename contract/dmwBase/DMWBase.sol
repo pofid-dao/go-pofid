@@ -71,6 +71,11 @@ contract DMWBase is DMWBaseControl{
             
         }
     }
+
+    function exists(string _backedCoin,string mintCoin) public view returns(bool){
+        bytes32 _key =_backedCoin.genStableCoinKey(_mintCoin);
+        return exists[_key];
+    }
     
     function getProxyAddress(string backedCoin,string mintCoin) public view returns(address){
         bytes32 _key =backedCoin.genStableCoinKey(mintCoin);
