@@ -30,7 +30,7 @@ profile.cov
 # VS Code
 .vscode
 
-config-dev.toml
+config-local.toml
 go-pofid-*
 build/_workspace
 build/bin

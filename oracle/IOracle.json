@@ -1,0 +1,37 @@
+[
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "backedCoin",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "mintCoin",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "numerator",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "denominator",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct ExchangeRate[]",
+        "name": "rates",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "updateRate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

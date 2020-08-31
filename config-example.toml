@@ -1,0 +1,17 @@
+
+URL = "http://127.0.0.1:8545"
+WS = "ws://127.0.0.1:8546"
+
+[DMW]
+    ContractAddress="2LYCBCsUf23tDgBbwofPQDDd11ax4KrDtSmctiRDy45dgNmjWjwkriJd1yALo6YXJNgL5XRHLGBwmVtgaqUoVtnV"
+[Oracle]
+    ContractAddress="4kWQb88sfuVxcFWQfhKJeYqbBxWqhc4gLkbDM5XUPRtVT1zoxJi7pGp1VQaVK46uTXtQi54RZxxyM2mFdKBc4xxJ"
+    KeystorePath="./keystore/oracle"
+[DMWBase]
+    ContractAddress="mLoJUJwQAikVipZ69TmydtKePpxm3qyGVqFSY4Xx5NGb9hxATsSZPKBfncCAgkKn8YdwWNKLy6YE8MvSr4dELv2"
+[Exs]
+    GATE   = "https://www.gatecn.io/api2/1/ticker/sero_usdt"
+    BITZ   = "https://api.bitzapi.com/Market/ticker?symbol=sero_usdt"
+    BIGONE = "https://www.bigonechina.com/api/v3/asset_pairs/SERO-USDT/ticker"
+    MXC = "https://www.mxcio.co/open/api/v1/data/ticker?market=SERO_USDT"
+    HBTC = "https://api.hbtc.com/openapi/quote/v1/ticker/price?symbol=SEROUSDT"
