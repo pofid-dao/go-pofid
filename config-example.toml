@@ -5,7 +5,7 @@ WS = "ws://127.0.0.1:8546"
 [DMW]
     ContractAddress="2LYCBCsUf23tDgBbwofPQDDd11ax4KrDtSmctiRDy45dgNmjWjwkriJd1yALo6YXJNgL5XRHLGBwmVtgaqUoVtnV"
 [Oracle]
-    ContractAddress="4kWQb88sfuVxcFWQfhKJeYqbBxWqhc4gLkbDM5XUPRtVT1zoxJi7pGp1VQaVK46uTXtQi54RZxxyM2mFdKBc4xxJ"
+    ContractAddress="4TrW6kKs2oLhXXxnYmnv8KKY3zcNXyjq9FkAnX19zJ5N2tGAK38h28xw8TZRLdKZ9wbmyJAVJmDEYsUyahahCBj9"
     KeystorePath="./keystore/oracle"
 [DMWBase]
     ContractAddress="mLoJUJwQAikVipZ69TmydtKePpxm3qyGVqFSY4Xx5NGb9hxATsSZPKBfncCAgkKn8YdwWNKLy6YE8MvSr4dELv2"

@@ -18,7 +18,7 @@ import (
 
 var IDMWBase *dmwBase.IDMWBase
 
-var IOracle *oracle.IOracle
+var IOracle *oracle.Oracle
 
 var IDMW *dmw.DMW
 
@@ -33,7 +33,7 @@ func InitContractClient(config config.Config, password string) {
 
 	IDMW, _ = dmw.NewDMW(common.Base58ToAddress(config.DMW.ContractAddress), backend)
 
-	IOracle, _ = oracle.NewIOracle(common.Base58ToAddress(config.Oracle.ContractAddress), backend)
+	IOracle, _ = oracle.NewOracle(common.Base58ToAddress(config.Oracle.ContractAddress), backend)
 	json, err := ioutil.ReadFile(config.Oracle.KeystorePath)
 	if err != nil {
 		panic(err)
@@ -45,7 +45,7 @@ func InitContractClient(config config.Config, password string) {
 	}
 }
 
-func SetCurrentRate(rates []oracle.ExchangeRate) (*types.Transaction, error) {
+func SetCurrentRate(rates []oracle.POFIDOracleExchangeRateReq) (*types.Transaction, error) {
 	return IOracle.UpdateRate(oracleAuth, rates)
 }
 

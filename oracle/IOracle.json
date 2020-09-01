@@ -5,6 +5,11 @@
         "components": [
           {
             "internalType": "string",
+            "name": "fiat",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
             "name": "backedCoin",
             "type": "string"
           },
@@ -22,9 +27,14 @@
             "internalType": "uint256",
             "name": "denominator",
             "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "push",
+            "type": "bool"
           }
         ],
-        "internalType": "struct ExchangeRate[]",
+        "internalType": "struct POFIDOracle.ExchangeRateReq[]",
         "name": "rates",
         "type": "tuple[]"
       }
@@ -35,3 +45,6 @@
     "type": "function"
   }
 ]
+
+
+//../build/abigen --abi ./IOracle.json  --pkg oracle  --out ./oracle.go

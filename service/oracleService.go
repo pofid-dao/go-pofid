@@ -21,7 +21,8 @@ import (
 //	{"EUR", "SEUR"},
 //	{"GBP", "SGBP"}}
 
-var currencys = []ex.Currency{{"USD", "SUSD", true}}
+var currencys = []ex.Currency{{"USD", "SUSD", true, true},
+	{"CNY", "SCNY", false, false}}
 
 var backedCoin = "SERO"
 
@@ -37,7 +38,7 @@ func NewService(exs config.ExURL) *OracleService {
 	return &OracleService{currencys, cyR, engine}
 }
 
-func (s *OracleService) getExchangeRate() (rates []oracle.ExchangeRate, err error) {
+func (s *OracleService) getExchangeRate() (rates []oracle.POFIDOracleExchangeRateReq, err error) {
 
 	n, d, err := s.engine.GetAVPrice()
 	if err != nil {
@@ -54,7 +55,7 @@ func (s *OracleService) getExchangeRate() (rates []oracle.ExchangeRate, err erro
 		if rn.Sign() == 0 || rd.Sign() == 0 {
 			continue
 		}
-		er := oracle.ExchangeRate{backedCoin, cy.Alias, rn, rd}
+		er := oracle.POFIDOracleExchangeRateReq{cy.Name, backedCoin, cy.Alias, rn, rd, cy.Push}
 
 		if cy.Check {
 			if validPrice(backedCoin, cy.Alias, rn.Int64(), rd.Int64()) {

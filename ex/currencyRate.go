@@ -21,6 +21,7 @@ type Currency struct {
 	Name  string
 	Alias string
 	Check bool
+	Push  bool
 }
 
 type CurrencyRateEngine struct {

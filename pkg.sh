@@ -6,6 +6,7 @@ root="$PWD"
 
 GOBIN="$PWD/build/bin"
 
+go mod vendor
 
 pofiddir="$workspace/src/github.com/pofid-dao"
 
@@ -44,8 +45,11 @@ export DYLD_LIBRARY_PATH="$pofiddir/go-pofid/vendor/github.com/sero-cash/go-czer
 #ls "$pofiddir/go-pofid/vendor/github.com/sero-cash/go-czero-import/czero/lib_LINUX_AMD64_V3"
 
 #
-cp -r "$pofiddir/go-pofid/vendor/github.com/sero-cash/go-czero-import/czero/lib_LINUX_AMD64_V3/"* "$pofiddir/go-pofid/vendor/github.com/sero-cash/go-czero-import/czero/lib/"
+cp -r "$pofiddir/go-pofid/vendor/github.com/sero-cash/go-czero-import/czero/lib_LINUX_AMD64_V3/"* "$pofiddir/go-pofid/vendor/github.com/sero-cash/go-czero-import/czero/lib/"o
 #
+
+cp -r "$pofiddir/go-pofid/vendor/github.com/sero-cash/go-czero-import/czero/lib_LINUX_AMD64_V3/"* "$root/czero/lib/"
+
 echo $DYLD_LIBRARY_PATH
 
 echo $PATH
@@ -57,7 +61,7 @@ xgo  --targets="$1" -v  --dest=$GOBIN ./pofid
 cd "$root"
 
 #
-rm -rf "$root/vendor"
+#rm -rf "$root/vendor"
 #
-rm -rf "$workspace"
+#rm -rf "$workspace"
 
