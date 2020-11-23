@@ -1,4 +1,5 @@
 pragma solidity ^0.4.26;
+
 import "./DMWCore.sol";
 
 
@@ -10,8 +11,8 @@ contract DMW is DMWCore{
     bool public paused = false;
 
 
-    constructor(address _dmwBase,address _dmwCoin,address _dmwInfo,address _dmwBinding) public
-    DMWCore(_dmwBase,_dmwCoin,_dmwInfo,_dmwBinding){
+    constructor(address _dmwBase,address _dmwCoin,address _dmwInfo) public
+    DMWCore(_dmwBase,_dmwCoin,_dmwInfo){
     }
 
     function transferDMW(address _newDMW)  external onlyOwner{
@@ -37,6 +38,15 @@ contract DMW is DMWCore{
         stakingAddress = address(0);
     }
 
+
+    function setDMWCoin(address _dmwCoin) public onlyCOO {
+
+        require(_dmwCoin!=address(this),"_base is self");
+
+        require(_dmwCoin.isContract(),"_base is not contract");
+
+        dmwCoinAddress = _dmwCoin;
+    }
 
 
     function setDMWBase(address _base) public onlyCOO {
