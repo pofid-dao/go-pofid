@@ -1,4 +1,4 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.4.26;
 import "./DMWStableCoin.sol";
 
 interface Staking {
@@ -55,9 +55,8 @@ contract DMWCore is DMWStableCoin{
     constructor(
         address dmwBase,
         address dmwCoin,
-        address dmwInfo,
-        address dmwBinding)  public
-    DMWStableCoin(dmwBase,dmwCoin,dmwBinding) {
+        address dmwInfo)  public
+    DMWStableCoin(dmwBase,dmwCoin) {
 
         dmwInfoAddress = dmwInfo;
 

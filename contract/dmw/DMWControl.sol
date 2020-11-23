@@ -1,5 +1,4 @@
-pragma solidity ^0.4.25;
-
+pragma solidity ^0.4.26;
 import "../Address.sol";
 
 contract DMWControl {

@@ -1,11 +1,11 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.4.26;
 
 import "../interface/IDMWCoin.sol";
-import "./DMWControl.sol";
+
 import "../seroInterface.sol";
 import "../SafeMath.sol";
 import "../Utils.sol";
-
+import "./DMWControl.sol";
 
 interface IDMWBase {
 
@@ -26,10 +26,9 @@ interface IDMWBase {
 
 }
 
-interface IBindings {
-    function binding(string  backedCoin,string  mintCoin) external returns(bool);
-}
-
+//interface IBindings {
+ //   function binding(string  backedCoin,string  mintCoin) external returns(bool);
+//}
 
 contract DMWStableCoin is DMWControl,SeroInterface {
 
@@ -59,13 +58,11 @@ contract DMWStableCoin is DMWControl,SeroInterface {
     mapping(bytes32 =>uint256) private minBackedAmount;
 
 
-    constructor(address dmwBase,address dmwCoin,address dmwBinding) public {
+    constructor(address dmwBase,address dmwCoin) public {
 
         dmwBaseAddress = dmwBase;
 
         dmwCoinAddress = dmwCoin;
-
-        dmwBindingAddress = dmwBinding;
     }
 
     function genStableCoinKey(string memory backedCoin,string memory mintCoin) internal pure returns(bytes32){
@@ -119,9 +116,9 @@ contract DMWStableCoin is DMWControl,SeroInterface {
 
         require(!stableCoinExists[_key],"has exists");
 
-        require(dmwBindingAddress !=address(0),"not set dmwBindingAddress");
+ //       require(dmwBindingAddress !=address(0),"not set dmwBindingAddress");
 
-        require(IBindings(dmwBindingAddress).binding(_backedCoin,_mintCoin),"invalid binding");
+  //      require(IBindings(dmwBindingAddress).binding(_backedCoin,_mintCoin),"invalid binding");
 
         stableCoinExists[_key] = true;
 
